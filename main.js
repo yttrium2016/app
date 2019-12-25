@@ -12,6 +12,10 @@ import {
 	hideToast,
 	getDate
 } from './utils/uniapp'
+
+import tools from './api/new.js'
+
+
 /**
  * 自定义的 title
  * <cu-custom bgColor="bg-brick" :isBack="true">

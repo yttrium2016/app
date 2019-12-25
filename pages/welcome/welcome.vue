@@ -1,9 +1,9 @@
 <template>
-	<view class="y-welcome">
-		<image src="/static/gif/loading-1.gif" mode="aspectFit" class="load-img gif-white"></image>
-		<text class="msg">
-			{{ msg }}{{ msgList[index] }}
-		</text>
+	<view class="y-welcome font-xwlogo">
+		<!-- <image src="/static/gif/welcome.gif" mode="aspectFill" class="load-img gif-white"></image> -->
+
+		<view class="loading-box"><view class="loading" data-loader="circle-side"></view></view>
+		<text class="msg">{{ msg }}{{ msgList[msgIndex] }}</text>
 	</view>
 </template>
 
@@ -16,13 +16,13 @@ export default {
 		return {
 			msg: '登录中',
 			msgList: ['.', '..', '...', '....'],
-			index: 0
+			msgIndex: 0
 		};
 	},
 	onLoad() {
 		setInterval(() => {
-			this.index++;
-			if (this.index >= 4) this.index = 0;
+			this.msgIndex++;
+			if (this.msgIndex >= 4) this.msgIndex = 0;
 		}, 500);
 
 		setTimeout(() => {
@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 .y-welcome {
 	position: relative;
-	background: #fefefe;
+	background: #fff;
 	height: 100vh;
 	.msg {
 		position: absolute;
@@ -45,13 +45,25 @@ export default {
 		right: 50rpx;
 		color: rgba($color: #616361, $alpha: 0.8);
 	}
+	.loading-box {
+		position: absolute;
+		bottom: 140rpx;
+		left: 0;
+		right: 0;
+		.loading {
+			width: 70rpx;
+			height: 70rpx;
+			border-width: 6rpx;
+			margin: auto;
+		}
+	}
+
 	.load-img {
 		position: absolute;
-		bottom: 20rpx;
-		left: 25rpx;
-		right: 25rpx;
-		width: 700rpx;
-		height:300rpx;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
 	}
 }
 </style>

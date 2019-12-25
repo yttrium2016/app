@@ -83,7 +83,9 @@ function initAppInfo() {
 @import 'colorui/icon.css';
 @import 'colorui/animation.css';
 /* 字体 */
-@import 'common/font/happy.css';
+@import 'common/font/xwlogo.scss';
+@import 'common/font/happy.scss';
 @import 'common/scss/common.scss';
+@import 'common/scss/loading.scss';
 
 </style>
